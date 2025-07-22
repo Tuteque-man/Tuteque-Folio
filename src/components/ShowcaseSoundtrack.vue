@@ -5,26 +5,22 @@
       <div class="pixel-line"></div>
     </div>
     <div class="soundtrack-flex-block">
-      <img src="/src/img/p4.gif" alt="Pixelart Left" class="side-img left" />
-      <a href="https://youtu.be/csQNux6mBi4" target="_blank" rel="noopener" class="video-block"
-         @mouseenter="isHover = true" @mouseleave="isHover = false">
-        <img src="/src/img/sountrack.png" alt="Soundtrack" class="video-thumb" />
-        <img :src="isHover ? playVideo2 : playVideo" alt="Play Video" class="video-play-icon-img" />
+      <img src="/img/p4.gif" alt="Pixelart Left" class="side-img left" />
+      <a href="https://youtu.be/csQNux6mBi4" target="_blank" rel="noopener" class="video-block">
+        <img src="/img/sountrack.png" alt="Soundtrack" class="video-thumb" />
+        <img src="/img/play-video.png" alt="Play Video" class="video-play-icon-img" />
       </a>
-      <img src="/src/img/p3.png" alt="Pixelart Right" class="side-img right" />
+      <img src="/img/p3.png" alt="Pixelart Right" class="side-img right" />
     </div>
     <div class="side-img-row">
-      <img src="/src/img/p4.gif" alt="Pixelart Left" class="side-img left mobile-only" />
-      <img src="/src/img/p3.png" alt="Pixelart Right" class="side-img right mobile-only" />
+      <img src="/img/p4.gif" alt="Pixelart Left" class="side-img left mobile-only" />
+      <img src="/img/p3.png" alt="Pixelart Right" class="side-img right mobile-only" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import playVideo from '@/img/play-video.png';
-import playVideo2 from '@/img/play-video2.png';
-const isHover = ref(false);
 </script>
 
 <style scoped>

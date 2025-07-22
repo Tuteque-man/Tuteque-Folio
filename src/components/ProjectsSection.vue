@@ -11,9 +11,12 @@
     </div>
     <div v-else class="projects-carousel">
       <!-- Desktop images -->
-      <img :src="ishide ? pausedH1 : h1Gif" alt="Left Pixelart 1" class="carousel-left-img h1-img" />
-      <img :src="ishide ? pausedH2 : h2Gif" alt="Left Pixelart 2" class="carousel-left-img h2-img" />
-      <img :src="ishide ? pausedH3 : h3Gif" alt="Left Pixelart 3" class="carousel-left-img h3-img" />
+      <img v-if="ishide" src="/img/paused/h1.png" alt="Left Pixelart 1" class="carousel-left-img h1-img" />
+      <img v-else src="/img/h1.gif" alt="Left Pixelart 1" class="carousel-left-img h1-img" />
+      <img v-if="ishide" src="/img/paused/h2.png" alt="Left Pixelart 2" class="carousel-left-img h2-img" />
+      <img v-else src="/img/h2.gif" alt="Left Pixelart 2" class="carousel-left-img h2-img" />
+      <img v-if="ishide" src="/img/paused/h3.png" alt="Left Pixelart 3" class="carousel-left-img h3-img" />
+      <img v-else src="/img/h3.gif" alt="Left Pixelart 3" class="carousel-left-img h3-img" />
       <img v-if="ishide" src="/src/img/n2.png" alt="Projects Corner" class="carousel-corner-img" />
       
       <div class="carousel-track-wrapper">
@@ -73,10 +76,13 @@
     
     <!-- Images below carousel for mobile -->
     <div class="mobile-images">
-      <img :src="ishide ? pausedH1 : h1Gif" alt="Left Pixelart 1" class="mobile-img h1-img" />
-      <img :src="ishide ? pausedH2 : h2Gif" alt="Left Pixelart 2" class="mobile-img h2-img" />
-      <img :src="ishide ? pausedH3 : h3Gif" alt="Left Pixelart 3" class="mobile-img h3-img" />
-      <img v-if="ishide" src="/src/img/n2.png" alt="Projects Corner" class="mobile-img n2-img" />
+      <img v-if="ishide" src="/img/paused/h1.png" alt="Left Pixelart 1" class="mobile-img h1-img" />
+      <img v-else src="/img/h1.gif" alt="Left Pixelart 1" class="mobile-img h1-img" />
+      <img v-if="ishide" src="/img/paused/h2.png" alt="Left Pixelart 2" class="mobile-img h2-img" />
+      <img v-else src="/img/h2.gif" alt="Left Pixelart 2" class="mobile-img h2-img" />
+      <img v-if="ishide" src="/img/paused/h3.png" alt="Left Pixelart 3" class="mobile-img h3-img" />
+      <img v-else src="/img/h3.gif" alt="Left Pixelart 3" class="mobile-img h3-img" />
+      <img v-if="ishide" src="/img/n2.png" alt="Projects Corner" class="mobile-img n2-img" />
     </div>
     
 
@@ -868,6 +874,13 @@ function showNotification(message) {
   setTimeout(() => {
     notifications.value = notifications.value.filter(n => n.id !== id);
   }, 3000);
+}
+
+function getImg(name) {
+  if (name === 'h3') {
+    return ishide.value ? '/img/paused/h3.png' : '/img/h3.gif'; // Usa webp si tu h3 animado es webp
+  }
+  return ishide.value ? `/img/paused/${name}.png` : `/img/${name}.gif`;
 }
 
 </script>

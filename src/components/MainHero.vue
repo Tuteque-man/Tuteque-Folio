@@ -27,7 +27,7 @@
       <transition name="fade-slide">
         <div v-if="show" class="img-frame hero-img-flex">
           <div class="pixel-frame">
-            <img :src="imgSrc" alt="Tuteque-man" class="hero-img" />
+            <img src="/img/Tuteque-man.png" alt="Tuteque-man" class="hero-img" />
             <div class="frame-glow"></div>
           </div>
         </div>
@@ -45,8 +45,6 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import tutequeManImg from '@/img/Tuteque-man.png';
-const imgSrc = tutequeManImg;
 const show = ref(false);
 const mainTitle = 'TUTEQUE-MAN';
 const totalScore = ref(0);
