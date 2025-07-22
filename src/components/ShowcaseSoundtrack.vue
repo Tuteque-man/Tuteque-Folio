@@ -9,7 +9,7 @@
       <a href="https://youtu.be/csQNux6mBi4" target="_blank" rel="noopener" class="video-block"
          @mouseenter="isHover = true" @mouseleave="isHover = false">
         <img src="/src/img/sountrack.png" alt="Soundtrack" class="video-thumb" />
-        <img :src="isHover ? '/src/img/play-video2.png' : '/src/img/play-video.png'" alt="Play Video" class="video-play-icon-img" />
+        <img :src="isHover ? playVideo2 : playVideo" alt="Play Video" class="video-play-icon-img" />
       </a>
       <img src="/src/img/p3.png" alt="Pixelart Right" class="side-img right" />
     </div>
@@ -22,6 +22,8 @@
 
 <script setup>
 import { ref } from 'vue';
+import playVideo from '@/img/play-video.png';
+import playVideo2 from '@/img/play-video2.png';
 const isHover = ref(false);
 </script>
 

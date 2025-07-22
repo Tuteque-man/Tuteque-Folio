@@ -45,7 +45,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-const imgSrc = '/src/img/Tuteque-man.png';
+import tutequeManImg from '@/img/Tuteque-man.png';
+const imgSrc = tutequeManImg;
 const show = ref(false);
 const mainTitle = 'TUTEQUE-MAN';
 const totalScore = ref(0);

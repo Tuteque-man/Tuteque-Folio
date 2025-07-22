@@ -11,9 +11,9 @@
     </div>
     <div v-else class="projects-carousel">
       <!-- Desktop images -->
-      <img :src="ishide ? '/src/img/paused/h1.png' : '/src/img/h1.gif'" alt="Left Pixelart 1" class="carousel-left-img h1-img" />
-      <img :src="ishide ? '/src/img/paused/h2.png' : '/src/img/h2.gif'" alt="Left Pixelart 2" class="carousel-left-img h2-img" />
-      <img :src="ishide ? '/src/img/paused/h3.png' : '/src/img/h3.webp'" alt="Left Pixelart 3" class="carousel-left-img h3-img" />
+      <img :src="ishide ? pausedH1 : h1Gif" alt="Left Pixelart 1" class="carousel-left-img h1-img" />
+      <img :src="ishide ? pausedH2 : h2Gif" alt="Left Pixelart 2" class="carousel-left-img h2-img" />
+      <img :src="ishide ? pausedH3 : h3Gif" alt="Left Pixelart 3" class="carousel-left-img h3-img" />
       <img v-if="ishide" src="/src/img/n2.png" alt="Projects Corner" class="carousel-corner-img" />
       
       <div class="carousel-track-wrapper">
@@ -73,9 +73,9 @@
     
     <!-- Images below carousel for mobile -->
     <div class="mobile-images">
-      <img :src="ishide ? '/src/img/paused/h1.png' : '/src/img/h1.gif'" alt="Left Pixelart 1" class="mobile-img h1-img" />
-      <img :src="ishide ? '/src/img/paused/h2.png' : '/src/img/h2.gif'" alt="Left Pixelart 2" class="mobile-img h2-img" />
-      <img :src="ishide ? '/src/img/paused/h3.png' : '/src/img/h3.webp'" alt="Left Pixelart 3" class="mobile-img h3-img" />
+      <img :src="ishide ? pausedH1 : h1Gif" alt="Left Pixelart 1" class="mobile-img h1-img" />
+      <img :src="ishide ? pausedH2 : h2Gif" alt="Left Pixelart 2" class="mobile-img h2-img" />
+      <img :src="ishide ? pausedH3 : h3Gif" alt="Left Pixelart 3" class="mobile-img h3-img" />
       <img v-if="ishide" src="/src/img/n2.png" alt="Projects Corner" class="mobile-img n2-img" />
     </div>
     
@@ -99,6 +99,15 @@
 <script setup>
 import { ref, onMounted, computed, onUnmounted } from 'vue';
 import { marked } from 'marked';
+import h1Gif from '@/img/h1.gif';
+import h2Gif from '@/img/h2.gif';
+import h3Gif from '@/img/h3.gif';
+import h3Webp from '@/img/h3.webp';
+import pausedH1 from '@/img/paused/h1.png';
+import pausedH2 from '@/img/paused/h2.png';
+import pausedH3 from '@/img/paused/h3.png';
+import n2Png from '@/img/n2.png';
+import iconPng from '@/img/icon.png';
 
 const projects = ref([]);
 const loading = ref(true);
