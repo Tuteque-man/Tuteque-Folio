@@ -1,0 +1,25 @@
+{
+  "name": "tuteque-man",
+  "version": "1.0.0",
+  "description": "Portafolio personal en Vue 3",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "firebase": "^12.0.0",
+    "marked": "^16.1.1",
+    "nodemailer": "^7.0.5",
+    "vue": "^3.4.0",
+    "vue-i18n": "^11.1.10"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "vite": "^6.3.5"
+  }
+}
