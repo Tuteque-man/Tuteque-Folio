@@ -153,6 +153,13 @@ onMounted(() => {
   filter: drop-shadow(0 0 20px rgba(255, 0, 80, 0.6));
 }
 
+img, svg, .pixelart-below-desc, .pixelart-side-img, .about-image-pixel, .contact-pixelart-img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  pointer-events: auto;
+}
+
 @keyframes float-glow {
   0%, 100% { 
     transform: translateY(0px);

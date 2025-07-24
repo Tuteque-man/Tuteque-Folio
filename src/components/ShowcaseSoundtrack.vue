@@ -8,7 +8,10 @@
       <img src="/img/p4.gif" alt="Pixelart Left" class="side-img left" />
       <a href="https://youtu.be/csQNux6mBi4" target="_blank" rel="noopener" class="video-block">
         <img src="/img/sountrack.png" alt="Soundtrack" class="video-thumb" />
-        <img src="/img/play-video.png" alt="Play Video" class="video-play-icon-img" />
+        <div class="video-play-icon-img">
+          <img src="/img/play-video.png" alt="Play Video" class="default" />
+          <img src="/img/play-video2.png" alt="Play Video Hover" class="hover" />
+        </div>
       </a>
       <img src="/img/p3.png" alt="Pixelart Right" class="side-img right" />
     </div>
@@ -43,6 +46,14 @@ import { ref } from 'vue';
   align-items: center;
   margin-bottom: 2.5rem;
 }
+
+img, svg, .pixelart-below-desc, .pixelart-side-img, .about-image-pixel, .contact-pixelart-img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  pointer-events: auto;
+}
+
 .pixel-title {
   font-family: 'Press Start 2P', monospace;
   font-size: 3.2rem;
@@ -159,8 +170,8 @@ import { ref } from 'vue';
   }
 }
 .video-block {
-  display: block;
   position: relative;
+  display: inline-block;
   width: 98vw;
   max-width: 900px;
   aspect-ratio: 16/9;
@@ -191,20 +202,34 @@ import { ref } from 'vue';
 }
 .video-play-icon-img {
   position: absolute;
-  top: 50%;
   left: 50%;
-  width: 220px;
-  height: 110px;
-  transform: translate(-50%, -50%) scale(1);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px !important;
+  height: 220px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
-  pointer-events: none;
-  transition: transform 0.18s;
-  filter: drop-shadow(0 0 12px #000a);
-  image-rendering: pixelated;
 }
-.video-block:hover .video-play-icon-img {
-  transform: translate(-50%, -50%) scale(1.13);
-  filter: drop-shadow(0 0 24px #00aaff);
+.video-play-icon-img img.default,
+.video-play-icon-img img.hover {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: auto;
+}
+.video-play-icon-img img.hover {
+  display: none;
+}
+.video-block:hover .video-play-icon-img img.default {
+  display: none;
+}
+.video-block:hover .video-play-icon-img img.hover {
+  display: inline;
 }
 @media (max-width: 900px) {
   .video-block {
@@ -214,8 +239,8 @@ import { ref } from 'vue';
     min-height: 101px;
   }
   .video-play-icon-img {
-    width: 90px;
-    height: 45px;
+    width: 96px !important;
+    height: 96px !important;
   }
 }
 @media (max-width: 600px) {

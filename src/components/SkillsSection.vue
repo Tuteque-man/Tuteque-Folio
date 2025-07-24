@@ -307,6 +307,13 @@ function dotStyle(n) {
   pointer-events: none;
 }
 
+img, svg, .pixelart-below-desc, .pixelart-side-img, .about-image-pixel, .contact-pixelart-img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  pointer-events: auto;
+}
+
 .glitch:before {
   animation: glitchTop 3s infinite linear alternate-reverse;
   clip-path: inset(0 0 60% 0);

@@ -107,6 +107,13 @@ function squareStyle(n) {
   margin-bottom: 4rem;
 }
 
+img, svg, .pixelart-below-desc, .pixelart-side-img, .about-image-pixel, .contact-pixelart-img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  pointer-events: auto;
+}
+
 .pixel-title {
   font-family: 'Press Start 2P', monospace;
   font-size: 2.5rem;

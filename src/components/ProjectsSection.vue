@@ -171,10 +171,6 @@ function toggleN2Visibility() {
 //   setInterval(toggleN2Visibility, 6000); // Every 6 seconds // This line was removed
 // }); // This line was removed
 
-
-
-
-
 // Función para obtener el estado del proyecto basado en las estadísticas
 const getProjectStatus = (repo) => {
   if (repo.stargazers_count > 10) return { status: 'production', statusText: 'POPULAR' };
@@ -1378,6 +1374,13 @@ function getImg(name) {
   box-shadow: 0 0 8px #00ffe7;
   animation: pulse-dot 3s infinite;
   position: relative;
+}
+
+img, svg, .pixelart-below-desc, .pixelart-side-img, .about-image-pixel, .contact-pixelart-img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  pointer-events: auto;
 }
 
 .dot::before {

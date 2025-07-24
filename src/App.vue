@@ -9,6 +9,7 @@
     <div v-else class="app-bg">
       <MainHero />
       <ShowcaseSoundtrack />
+      <FiverrGigsCarousel />
       <SkillsSection />
       <ProjectsSection />
       <AboutSection />
@@ -21,6 +22,7 @@
 import { ref, onMounted } from 'vue';
 import MainHero from './components/MainHero.vue';
 import ShowcaseSoundtrack from './components/ShowcaseSoundtrack.vue';
+import FiverrGigsCarousel from './components/FiverrGigsCarousel.vue';
 import SkillsSection from './components/SkillsSection.vue';
 import ProjectsSection from './components/ProjectsSection.vue';
 import AboutSection from './components/AboutSection.vue';
